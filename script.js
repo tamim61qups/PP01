@@ -1,9 +1,16 @@
 let passwords = [];
 
 function login() {
-    // Dummy login function
-    document.getElementById('loginPage').style.display = 'none';
-    document.getElementById('mainPage').style.display = 'block';
+    const enteredUsername = document.getElementById('username').value;
+    const enteredPassword = document.getElementById('password').value;
+
+    // Check if the entered credentials match the user object
+    if (enteredUsername === "kazitamim757" && enteredPassword === "kazitamim") {
+        document.getElementById('loginPage').style.display = 'none';
+        document.getElementById('mainPage').style.display = 'block';
+    } else {
+        alert('Invalid username or password. Please try again.');
+    }
 }
 
 function addPassword() {
@@ -15,6 +22,11 @@ function addPassword() {
     passwords.push({ accountName, username, password, url });
 
     displayPasswords();
+}
+
+function togglePasswordVisibility() {
+    const passwordInput = document.getElementById('password');
+    passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
 }
 
 function searchPasswords() {
