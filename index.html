@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Password Management</title>
+</head>
+<body>
+    <div class="container">
+        <div id="loginPage">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+                <button type="button" onclick="login()">Login</button>
+            </form>
+        </div>
+        <div id="mainPage" style="display:none;">
+            <h2>Password Management</h2>
+            <form id="passwordForm">
+                <label for="accountName">Account Name:</label>
+                <input type="text" id="accountName" required>
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+                <label for="url">URL:</label>
+                <input type="text" id="url" required>
+                <button type="button" onclick="addPassword()">Add Password</button>
+                <hr>
+                <label for="search">Search by Account Name or Username:</label>
+                <input type="text" id="search" oninput="searchPasswords()">
+                <ul id="passwordList"></ul>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
